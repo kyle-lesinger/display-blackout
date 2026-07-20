@@ -1,0 +1,10 @@
+# Compiled binary (produced by build.sh)
+display-blackout
+
+# macOS cruft
+.DS_Store
+._*
+
+# Editor/swap junk
+*.swp
+*~
