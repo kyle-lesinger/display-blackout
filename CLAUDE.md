@@ -22,6 +22,12 @@ on, `0` = all on, `q`/`Esc` = restore + quit.
 ## Build & run
 - `./build.sh` produces `./display-blackout` in the repo root.
 - Run with `./display-blackout`. Stop with `q`, `Esc`, or Ctrl-C.
+- **Maintainer launches it as `focus`** — a plain alias in `~/.zshrc.d/aliases.zsh`
+  (`alias focus='<repo>/display-blackout'`) pointing straight at the built binary, so it's
+  reachable from any terminal. It must run in the terminal foreground (raw-mode stdin), so
+  it is NOT an `.app` and can't be `open`ed. The alias is tied to the repo path (moving the
+  repo breaks it), and since `build.sh` re-ad-hoc-signs in place, a rebuild can re-trigger
+  the Accessibility (TCC) prompt.
 
 ## Design notes / gotchas
 - **No backlight API.** macOS has no public way to power off a specific display. The
